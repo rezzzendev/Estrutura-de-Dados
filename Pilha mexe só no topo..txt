@@ -1,0 +1,31 @@
+Pilha: mexe só no topo.
+Fila: insere no fim e remove do início.
+Deque: mexe dos dois lados.
+
+| Estrutura | Regra       | Insere onde?        | Remove onde?        |
+| --------- | ----------- | ------------------- | ------------------- |
+| Lista     | livre       | início, fim ou meio | início, fim ou meio |
+| Pilha     | LIFO        | topo                | topo                |
+| Fila      | FIFO        | fim                 | início              |
+| Deque     | duas pontas | início ou fim       | início ou fim       |
+
+Quando for inserir.
+1. Cria o novo nó.
+2. Liga o novo nó em algum lugar.
+3. Atualiza início ou fim.
+
+Quando for remover.
+1. Guarda o nó em aux.
+2. Atualiza início/fim.
+3. Libera aux.
+
+typedef struct No {
+    int valor;
+    struct No *prox;
+} No;
+
+typedef struct Lista {
+    No *inicio;
+    No *fim;
+    int qtd;
+} Lista;
